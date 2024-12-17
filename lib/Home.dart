@@ -2,20 +2,27 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:harry_potter_spells/ApiServices/api.dart';
+import 'package:harry_potter_spells/ApiServices/spell_model.dart';
 
 
 
 class HomePage extends StatefulWidget {
-   HomePage({super.key,});
+   const HomePage({super.key,});
 
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
+  SpellModel? spellModel;
+
+  getData() async{
+  spellModel= await ApiProvider().getSpell();
+  }
   @override
     void initState() {
-   // ApiProvider().getSpell();
+   getData();
       super.initState();
     }
 //SpellModel? spellModel;
@@ -35,19 +42,21 @@ class _HomePageState extends State<HomePage> {
   return Column(
     children: [
       Container(
+        alignment: AlignmentDirectional.center,
       width:200,
       height: 300,
       color: Colors.amber,
-      child:const Text("")
+      child: Text("${spellModel?.name}")
       // Text("${spellModel!.name}"),
 
     ),
 
     Container(
+      alignment: AlignmentDirectional.center,
       width:200,
       height: 200,
-      color: Colors.amber,
-      child: const Text(""),
+      color: const Color.fromARGB(255, 48, 255, 7),
+      child: Text("${spellModel?.description}"),
       //Text(spellModel?.description ?? "gggg"),
 
     ),
