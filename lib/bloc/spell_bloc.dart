@@ -15,6 +15,7 @@ Future<List<SpellModel>> getSpell() async{
   spellModel = await ApiProvider().getSpells();
   
   emit(SpellLoaded(spellModel!));
+
   return spellModel!;
 
 
