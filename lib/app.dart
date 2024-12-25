@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:harry_potter_spells/ApiServices/api.dart';
-import 'package:harry_potter_spells/UI_Components/new_home_bloc.dart';
-import 'package:harry_potter_spells/bloc/spell_bloc.dart';
+
+
 import 'package:harry_potter_spells/core/utils/app_strings.dart';
+import 'package:harry_potter_spells/features/Magic_Spells/domain/ApiServices/api.dart';
+import 'package:harry_potter_spells/features/Magic_Spells/presentation/cubit/spell_bloc.dart';
+import 'package:harry_potter_spells/features/Magic_Spells/presentation/screens/new_home_bloc.dart';
 
 
 class SpellsApp extends StatelessWidget {
