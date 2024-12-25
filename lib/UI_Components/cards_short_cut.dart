@@ -1,5 +1,6 @@
  import 'package:flutter/material.dart';
 import 'package:harry_potter_spells/bloc/spell_states.dart';
+import 'package:harry_potter_spells/core/utils/constants.dart';
 
 // ignore: non_constant_identifier_names
 ListView SpellUiDisplay(SpellLoaded state) {
@@ -15,7 +16,7 @@ ListView SpellUiDisplay(SpellLoaded state) {
                 child: Container(
                   decoration: BoxDecoration(
                     gradient: const LinearGradient(
-                      colors: [Colors.purpleAccent, Colors.blueAccent],
+                      colors: [Constants.colorpurple, Constants.colorBlue],
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
                     ),
@@ -36,7 +37,7 @@ state.spellModel[index].name
                           style: const TextStyle(
                             fontSize: 24,
                             fontWeight: FontWeight.bold,
-                            color: Color.fromARGB(255, 16, 14, 14),
+                            color: Constants.colorBlack,
                           ),
                         ),
                         const SizedBox(height: 10),
@@ -47,7 +48,7 @@ state.spellModel[index].description
                           ,
                           style: const TextStyle(
                             fontSize: 20,
-                            color: Color.fromARGB(179, 12, 11, 11),
+                            color: Constants.colorBlack,
                           ),
                         ),
                         const SizedBox(height: 10),
@@ -59,7 +60,7 @@ state.spellModel[index].description
                           
 
                            }, 
-                           icon:  const Icon(Icons.star,color: Colors.yellowAccent ,),
+                           icon:  const Icon(Icons.star,color: Constants.colorYellow,),
                           ),
                         ),
                       ],

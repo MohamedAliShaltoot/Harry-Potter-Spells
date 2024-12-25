@@ -29,12 +29,13 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:harry_potter_spells/ApiServices/spell_model.dart';
+import 'package:harry_potter_spells/core/utils/constants.dart';
 
 class ApiProvider {
-  final String apiUrl = "https://hp-api.onrender.com/api";
+
   Future<List<SpellModel>> getSpells() async {
     try {
-      Response response = await Dio().get("$apiUrl/spells");
+      Response response = await Dio().get("${Constants.apiUrl}/spells");
 
       if (kDebugMode) {
         print(response.statusCode);

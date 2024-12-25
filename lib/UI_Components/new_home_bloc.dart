@@ -5,6 +5,8 @@ import 'package:harry_potter_spells/ApiServices/spell_model.dart';
 import 'package:harry_potter_spells/UI_Components/cards_short_cut.dart';
 import 'package:harry_potter_spells/bloc/spell_bloc.dart';
 import 'package:harry_potter_spells/bloc/spell_states.dart';
+import 'package:harry_potter_spells/core/utils/app_strings.dart';
+
 
 // ignore: must_be_immutable
 class NewHomePage extends StatelessWidget {
@@ -19,7 +21,7 @@ class NewHomePage extends StatelessWidget {
       backgroundColor: const Color.fromARGB(255, 3, 54, 95),
       appBar: AppBar(
         backgroundColor: Colors.blue,
-        title: const Text("Magical Spells"),
+        title: const Text(AppStrings.appBarTitle),
         actions: const [
           Icon(Icons.sticky_note_2),
         ],
@@ -37,7 +39,7 @@ class NewHomePage extends StatelessWidget {
             onPressed: () async {
               await context.read<SpellCubit>().getSpell();
             },
-            child: const Text(" Click Me"),
+            child: const Text(AppStrings.buttonName),
           ),
         );
       }),
